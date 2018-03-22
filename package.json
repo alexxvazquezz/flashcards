@@ -1,0 +1,22 @@
+{
+  "name": "flashcard",
+  "version": "1.0.0",
+  "description": "Fashcard using Esxpress",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexxvazquezz/flashcards.git"
+  },
+  "author": "Alejandro Vazquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexxvazquezz/flashcards/issues"
+  },
+  "homepage": "https://github.com/alexxvazquezz/flashcards#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
