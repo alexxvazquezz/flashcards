@@ -2,12 +2,17 @@ const express = require('express');
 
 const app = express();
 
+app.set('view engine', 'pug');
+
 app.get('/', (req, res) => {
-  res.send('<h1>Hello whatup DOG I love you</h1>');
+  res.render('index');
 })
 
-app.get('/hello', (req, res) => {
-  res.send('<h2>Hello motherfucker</h2>')
+app.get('/cards', (req, res) => {
+  res.render('cards',
+    { prompt: "Who is buried in Grant's tumb?",
+        hint: "Think about who's in the tumb..."
+    })
 })
 
 app.listen(3000, () => {
