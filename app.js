@@ -15,6 +15,19 @@ app.get('/cards', (req, res) => {
     })
 })
 
+app.get('/usertable', (req, res) => {
+  res.render('table');
+})
+
+app.get('/hello', (req, res) => {
+  res.render('hello');
+})
+
+app.post('/hello', (req, res) => {
+  res.render('hello');
+})
+
+
 app.listen(3000, () => {
   console.log('The application is runing on localhost:3000');
 })
