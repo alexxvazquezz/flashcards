@@ -1,11 +1,19 @@
 const express = require('express');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const name = req.cookies.username;
+  if(name) res.render('index', { name });
+  else res.redirect('/hello');
+
 })
 
 app.get('/cards', (req, res) => {
@@ -20,11 +28,12 @@ app.get('/usertable', (req, res) => {
 })
 
 app.get('/hello', (req, res) => {
-  res.render('hello');
+  res.render('hello', { name: req.cookies.username });
 })
 
 app.post('/hello', (req, res) => {
-  res.render('hello');
+  res.cookie('username', req.body.username)
+  res.redirect('/');
 })
 
 
